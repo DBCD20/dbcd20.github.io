@@ -2,7 +2,6 @@
 interface Project {
   title: string;
   description: string;
-  image: string;
   link: string;
 }
 
@@ -10,31 +9,25 @@ const projects: Project[] = [
   {
     title: 'ACM Near Expiry IaC',
     description: 'Building infrastructure as code for ACM resources nearing expiry.',
-    image: 'acm-near-expiry.jpg',
-    label: 'Solution',
     link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
   },
     {
     title: 'AWS Module IaC',
     description: 'Building infrastructure as code for AWS resources.',
-    label: 'Module',
     link: '#',
   },
       {
     title: 'Alert Unauthorized API Requests IaC',
     description: 'Building infrastructure as code for alerting unauthorized API requests.',
-    label: 'Solution',
     link: '#',
   },
   {
     title: 'Detect Disabled CloudTrail IaC',
     description: 'Building infrastructure as code for detecting disabled CloudTrail.',
-    label: 'Solution',
     link: '#',
   },      {
     title: 'Network Firewall IaC',
     description: 'Building infrastructure as code for network firewalls.',
-    label: 'Module',
     link: '#',
   },
   // add more
