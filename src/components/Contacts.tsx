@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 bg-black">
+    <section id="contact" className="py-32 bg-black bg-[url('/hero-bg.jpg')] bg-cover bg-fixed bg-center bg-gray-700 bg-blend-multiply">
       <div className="max-w-2xl mx-auto px-6">
         <h2 className="text-3xl text-white font-semibold mb-4 text-center">Get in Touch</h2>
         <p className="text-gray-400 text-center mb-10">
