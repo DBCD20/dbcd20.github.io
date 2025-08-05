@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section
-      className="h-screen flex items-center justify-center bg-[url('/hero-bg.jpg')] bg-cover bg-fixed bg-center bg-gray-700 bg-blend-multiply"
+      className="h-screen flex items-center justify-center bg-[url('./hero-bg.jpg')] bg-cover bg-fixed bg-center bg-gray-700 bg-blend-multiply"
       id="hero"
     >
       <div className="text-center space-y-4 px-4 rounded-lg p-6">
