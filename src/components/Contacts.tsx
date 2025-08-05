@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="max-w-2xl mx-auto px-6">
         <h2 className="text-3xl text-white font-semibold mb-4 text-center">Get in Touch</h2>
         <p className="text-gray-400 text-center mb-10">
-          I&apos;m currently open to freelance opportunities, collaborations, or just chatting about DevOps, AWS, or tech in general.
+          I&apos;m currently open to offering free cloud architecture consultations, exploring collaboration opportunities, or simply connecting to discuss DevOps, AWS, or technology in general.
           Feel free to send a message — I&apos;ll get back to you as soon as possible.
         </p>
 
