@@ -37,13 +37,13 @@ export default function Projects() {
   return (
     <section id="projects" className="min-h-screen py-12 bg-white grid place-content-center">
       <div className="container mx-auto px-6 lg:grid-cols-3 gap-8">
-        <h2 className="text-3xl text-black font-semibold text-primary mb-8">Projects</h2>
+        <h2 className="text-4xl md:text-6xl text-black font-semibold text-primary mb-8">Projects</h2>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
           {projects.map((p, i) => (
             <a key={i} href={p.link} className="group block overflow-hidden bg-white hover:shadow-lg transition">
               <div className="p-4 border-b border-gray-200">
-                <h3 className="text-xl xl:text-2xl text-gray-800 font-semibold mb-2">{p.title}</h3>
-                <p className="text-gray-700">{p.description}</p>
+                <h3 className="text-xl md:text-2xl xl:text-3xl text-gray-800 font-semibold mb-2">{p.title}</h3>
+                <p className="text-gray-500 md:text-xl">{p.description}</p>
                 <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">Terraform</span>
                 <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">IaC</span>
               </div>
