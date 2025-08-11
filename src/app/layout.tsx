@@ -12,7 +12,7 @@ const roboto = Roboto({
  
 
 export const metadata: Metadata = {
-  title: "dmagsipoc@Remote DevOps",
+  title: "David's Website",
   description: "Personal portfolio website showcasing DevOps projects and skills.",
 };
 
@@ -27,18 +27,4 @@ export default function RootLayout({
     </html>
   )
 }
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en">
-//       <body
-//         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-//       >
-//         {children}
-//       </body>
-//     </html>
-//   );
-// }
+
