@@ -14,7 +14,7 @@ const projects: Project[] = [
     {
     title: 'AWS Module IaC',
     description: 'Building infrastructure as code for AWS resources.',
-    link: '#',
+    link: 'https://github.com/DBCD20/aws-modules',
   },
       {
     title: 'Alert Unauthorized API Requests IaC',
