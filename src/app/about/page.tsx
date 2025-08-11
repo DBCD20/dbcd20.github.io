@@ -11,7 +11,7 @@ export default function About() {
           {/* Image */}
           <div className="flex-shrink-0">
             <Image
-              src="/my-photo.JPG" // replace with your actual image path
+              src="/profile-photo.webp"
               alt="Profile photo"
               width={300}
               height={300}
