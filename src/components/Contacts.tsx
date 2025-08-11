@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-32 bg-black bg-[url('/hero-bg.jpg')] bg-cover bg-fixed bg-center bg-blend-multiply grid place-content-center">
+    <section id="contact" className="min-h-screen py-32 bg-black bg-[url('/hero-bg.jpg')] bg-cover bg-fixed bg-center grid place-content-center">
       <div className="max-w-2xl mx-auto px-6">
         <h2 className="text-4xl md:text-6xl text-white font-semibold mb-4 text-center">Get in Touch</h2>
         <p className="text-gray-400 text-center mb-10">
@@ -20,7 +20,7 @@ export default function Contact() {
               id="name"
               name="name"
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary p-2"
+              className="bg-black mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary p-2"
             />
           </div>
 
@@ -31,7 +31,7 @@ export default function Contact() {
               id="email"
               name="_replyto"
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary p-2"
+              className="bg-black mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary p-2"
             />
           </div>
 
@@ -42,7 +42,7 @@ export default function Contact() {
               name="message"
               rows={5}
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary p-2"
+              className="bg-black mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary p-2"
             />
           </div>
 
