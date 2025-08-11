@@ -17,3 +17,8 @@ ffmpeg -i public/videos/candidate.mp4 \
   -movflags +faststart \
   lossless-video.webm
 ```
+#### Convert image
+
+```
+cwebp -lossless my-photo.JPG -o profile-photo.webp
+```
