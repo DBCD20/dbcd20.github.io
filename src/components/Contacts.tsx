@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-32 bg-black bg-[url('/hero-bg.jpg')] bg-cover bg-fixed bg-center bg-gray-700 bg-blend-multiply grid place-content-center">
+    <section id="contact" className="min-h-screen py-32 bg-black bg-[url('/hero-bg.jpg')] bg-cover bg-fixed bg-center bg-blend-multiply grid place-content-center">
       <div className="max-w-2xl mx-auto px-6">
         <h2 className="text-4xl md:text-6xl text-white font-semibold mb-4 text-center">Get in Touch</h2>
         <p className="text-gray-400 text-center mb-10">
