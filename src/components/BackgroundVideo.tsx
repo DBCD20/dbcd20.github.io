@@ -7,6 +7,7 @@ export default function BackgroundVideo() {
         muted
         playsInline
         className="absolute min-w-full min-h-full object-cover"
+        poster="/hero-bg.jpg"
       >
         <source src="/videos/background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
