@@ -2,8 +2,8 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className="bg-black shadow-md fixed top-0 w-full z-100 p-0">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <div className="text-2xl dd text-primary">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6 text-white">
+        <div className="text-2xl font-semibold">
           <Link href="/#" className="hover:text-accent">Remote DevOps</Link>
         </div>
         <nav className="space-x-6">
