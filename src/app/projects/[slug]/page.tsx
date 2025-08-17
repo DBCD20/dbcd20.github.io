@@ -18,7 +18,7 @@ return (
           </h1>
             <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-xs">
               This text is published with the help of ChatGPT & Copilot
-            </span>
+            </span>{' '}
           {project.date && (
             <time className="text-sm text-gray-600">
             
