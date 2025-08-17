@@ -4,6 +4,13 @@ import { createSlug, formatDate } from '@/utils/projectUtils'
 import { projectsData } from "@/data/projects"
 // import type { Project, ProjectSection, ProjectTag, ProjectMetadata } from '@/types/project';
 
+export async function generateStaticParams() {
+  return projectsData.map((project) => ({
+    slug: createSlug(project.title),
+  }))
+}
+
+
 export default async function ProjectPage(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;
   const project = projectsData.find(p => createSlug(p.title) === params.slug)
