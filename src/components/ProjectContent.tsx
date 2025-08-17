@@ -1,11 +1,12 @@
 'use client'
-import { MDXProvider, Components } from '@mdx-js/react'
+import { MDXProvider } from '@mdx-js/react';
+import type { MDXComponents } from 'mdx/types';
 import type { ProjectSection } from '@/types/project';
 import { GitHubButton } from './GithubButton';
 import type { ComponentPropsWithoutRef } from 'react';
 
 // Explicit HTML types instead of `any`
-const components: Components = {
+const components: MDXComponents = {
   h1: (props: ComponentPropsWithoutRef<'h1'>) => (
     <h1 className="text-4xl md:text-5xl font-bold mb-8" {...props} />
   ),

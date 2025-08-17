@@ -27,7 +27,10 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
               </time>
             )}
           </div>
-          <ProjectContent sections={project.sections} githubUrl={project.githubUrl || project.link} />
+          <ProjectContent 
+            sections={project.sections ?? []} 
+            githubUrl={project.githubUrl || project.link} 
+          />
         </div>
       </main>
     )
