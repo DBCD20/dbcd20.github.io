@@ -55,7 +55,7 @@ export const projectsData: Project[] = [
       },
       {
         type: 'list',
-        title: 'Auto-renewal Isn&apos;t Always Enough',
+        title: 'Auto-renewal Isnt Always Enough',
         content: 'While ACM supports automatic renewal for some certificates (like those in use by Elastic Load Balancers or CloudFront), not all certificates are automatically renewed. Even when auto-renewal is enabled:',
         items: [
           'Certificates may fail to renew due to DNS issues or validation problems',
