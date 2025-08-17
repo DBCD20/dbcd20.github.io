@@ -2,7 +2,7 @@ import { ProjectContent } from '@/components/ProjectContent'
 import { notFound } from 'next/navigation'
 import { createSlug, formatDate } from '@/utils/projectUtils'
 import { projectsData } from "@/data/projects"
-import type { Project, ProjectSection, ProjectTag, ProjectMetadata } from '@/types/project';
+// import type { Project, ProjectSection, ProjectTag, ProjectMetadata } from '@/types/project';
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projectsData.find(p => createSlug(p.title) === params.slug)

@@ -13,7 +13,7 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 
   // 👇 Enables static export
-  output: 'export',
+  // output: 'export',
 }
 
 export default withMDX(nextConfig)

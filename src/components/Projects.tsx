@@ -1,9 +1,7 @@
 'use client'; // This line is essential for using useState
-import { useState } from "react";
 import Link from 'next/link'
 import { usePagination } from "../hooks/usePagination";
 import { projectsData } from "@/data/projects";
-import type { Project } from "@/data/projects";
 
 // Add this after your interface definition
 const truncateText = (text: string, limit: number = 60) => {

@@ -1,25 +1,28 @@
 'use client'
-import { MDXProvider } from '@mdx-js/react'
-import type { Project, ProjectSection, ProjectTag, ProjectMetadata } from '@/types/project';
+import { MDXProvider, Components } from '@mdx-js/react'
+import type { ProjectSection } from '@/types/project';
 import { GitHubButton } from './GithubButton';
+import type { ComponentPropsWithoutRef } from 'react';
 
-const components = {
-  h1: (props: any) => (
+// Explicit HTML types instead of `any`
+const components: Components = {
+  h1: (props: ComponentPropsWithoutRef<'h1'>) => (
     <h1 className="text-4xl md:text-5xl font-bold mb-8" {...props} />
   ),
-  h2: (props: any) => (
+  h2: (props: ComponentPropsWithoutRef<'h2'>) => (
     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4" {...props} />
   ),
-  p: (props: any) => (
+  p: (props: ComponentPropsWithoutRef<'p'>) => (
     <p className="text-lg leading-relaxed mb-4" {...props} />
   ),
-  pre: (props: any) => (
+  pre: (props: ComponentPropsWithoutRef<'pre'>) => (
     <pre className="bg-gray-50 rounded-lg p-4 overflow-x-auto" {...props} />
   ),
-  code: (props: any) => (
+  code: (props: ComponentPropsWithoutRef<'code'>) => (
     <code className="text-sm font-mono" {...props} />
   ),
 }
+
 
 const Warning = ({ content, className }: { content: string; className?: string }) => (
   <div className={`bg-yellow-50 border-l-4 border-yellow-400 p-3 sm:p-4 my-4 ${className || ''}`}>
