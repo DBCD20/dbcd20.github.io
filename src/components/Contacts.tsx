@@ -1,9 +1,7 @@
-import BackgroundVideo from './BackgroundVideo';
-
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-32 relative grid place-content-center">
-      <BackgroundVideo />
+    <section id="contact" className="min-h-screen py-32 relative grid place-content-center bg-[#070217]">
+      {/* <BackgroundVideo /> */}
       <div className="max-w-2xl mx-auto px-6 relative z-10">
         <h2 className="text-4xl md:text-6xl text-white font-semibold mb-4 text-center">Get in Touch</h2>
         <p className="text-gray-200 text-center mb-10">

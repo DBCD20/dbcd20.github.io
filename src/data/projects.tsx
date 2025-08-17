@@ -140,75 +140,75 @@ export const projectsData: Project[] = [
     }
   ]
 },
-//     {
-//         title: 'Terraform Module: VPC Flow Logs',
-//         description: 'Building infrastructure as code for VPC Flow Logs.',
-//         link: '#',
-//         tags: ['Terraform', 'AWS', 'VPC'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'Detect Disabled CloudTrail IaC',
-//         description: 'Building infrastructure as code for detecting disabled CloudTrail.',
-//         link: '#',
-//         tags: ['Terraform', 'AWS', 'CloudTrail'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'Network Firewall IaC',
-//         description: 'Building infrastructure as code for network firewalls.',
-//         link: '#',
-//         tags: ['Terraform', 'AWS', 'Network Firewall'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'Terraform Module: EKS',
-//         description: 'Building infrastructure as code for EKS resources.',
-//         link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
-//         tags: ['Terraform', 'AWS', 'EKS'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'Terraform Module: ECS',
-//         description: 'Building infrastructure as code for ECS resources.',
-//         link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
-//         tags: ['Terraform', 'AWS', 'ECS'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'EKS Add On: Node Monitoring and Auto Repair Capability',
-//         description: 'Building infrastructure as code for EKS add-ons Node Monitoring and Auto Repair Capability.',
-//         link: 'https://github.com/DBCD20/aws-modules',
-//         tags: ['Terraform', 'AWS', 'EKS'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'EKS Add On: Basic',
-//         description: 'Building infrastructure as code for EKS add-ons Basic.',
-//         link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
-//         tags: ['Terraform', 'AWS', 'EKS'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'EKS Add On: KEDA',
-//         description: 'Building infrastructure as code for EKS add-ons KEDA.',
-//         link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
-//         tags: ['Terraform', 'AWS', 'EKS'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'EKS Add On: Karpenter',
-//         description: 'Building infrastructure as code for EKS add-ons Basic.',
-//         link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
-//         tags: ['Terraform', 'AWS', 'EKS'],
-//         date: '2024-02-15'
-//     },
-//     {
-//         title: 'EKS Add On: Falco',
-//         description: 'Building infrastructure as code for EKS add-ons Falco.',
-//         link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
-//         tags: ['Terraform', 'AWS', 'EKS'],
-//         date: '2024-02-15'
-//     },
+    {
+        title: 'Terraform Module: VPC Flow Logs',
+        description: 'Building infrastructure as code for VPC Flow Logs.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'VPC'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'Detect Disabled CloudTrail IaC',
+        description: 'Building infrastructure as code for detecting disabled CloudTrail.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'CloudTrail'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'Network Firewall IaC',
+        description: 'Building infrastructure as code for network firewalls.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'Network Firewall'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'Terraform Module: EKS',
+        description: 'Building infrastructure as code for EKS resources.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'EKS'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'Terraform Module: ECS',
+        description: 'Building infrastructure as code for ECS resources.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'ECS'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'EKS Add On: Node Monitoring and Auto Repair Capability',
+        description: 'Building infrastructure as code for EKS add-ons Node Monitoring and Auto Repair Capability.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'EKS'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'EKS Add On: Basic',
+        description: 'Building infrastructure as code for EKS add-ons Basic.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'EKS'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'EKS Add On: KEDA',
+        description: 'Building infrastructure as code for EKS add-ons KEDA.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'EKS'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'EKS Add On: Karpenter',
+        description: 'Building infrastructure as code for EKS add-ons Basic.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'EKS'],
+        date: '2024-02-15'
+    },
+    {
+        title: 'EKS Add On: Falco',
+        description: 'Building infrastructure as code for EKS add-ons Falco.',
+        link: '#',
+        tags: ['Terraform', 'AWS', 'EKS'],
+        date: '2024-02-15'
+    },
 // // add more
 ];
