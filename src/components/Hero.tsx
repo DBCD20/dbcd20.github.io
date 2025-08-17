@@ -1,4 +1,5 @@
 import BackgroundVideo from './BackgroundVideo';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -12,12 +13,12 @@ export default function Hero() {
         <p className="text-xl text-gray-100 max-w-xl mx-auto  text-shadow-lg/70">
           a passionate DevOps engineer specializing in automation, CI/CD pipelines, and cloud infrastructure. With a focus on efficiency, reliability, and scalability
         </p>
-        <a
+        <Link
           href="#projects"
           className="mt-6 inline-block px-6 py-3 bg-accent text-white bg-dark"
         >
           View My Work
-        </a>
+        </Link>
       </div>
     </section>
   );
