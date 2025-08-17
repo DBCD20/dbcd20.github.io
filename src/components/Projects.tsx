@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePagination } from "../hooks/usePagination";
 import { projectsData } from "@/data/projects";
+import Tag from './Tags';
 
 // Add this after your interface definition
 const truncateText = (text: string, limit: number = 60) => {
@@ -43,12 +44,19 @@ export default function Projects() {
                 <p className="text-gray-500 md:text-xl">
                   {truncateText(p.description, 60)}
                 </p>
-                <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                {/* <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
                   Terraform
                 </span>
                 <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
                   IaC
-                </span>
+                </span> */}
+                {p.tags && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {p.tags.map((tag: string, i: number) => (
+                      <Tag key={i} tag={tag} />
+                    ))}
+                  </div>
+                )}
               </div>
             </Link>
           ))}
