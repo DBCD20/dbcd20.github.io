@@ -1,7 +1,7 @@
-import createMDX from '@next/mdx'
+import mdx from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 
-const withMDX = createMDX({
+const withMDX = mdx({
   options: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [],
