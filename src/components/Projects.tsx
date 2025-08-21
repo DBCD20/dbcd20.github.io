@@ -44,12 +44,6 @@ export default function Projects() {
                 <p className="text-gray-500 md:text-xl">
                   {truncateText(p.description, 60)}
                 </p>
-                {/* <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                  Terraform
-                </span>
-                <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
-                  IaC
-                </span> */}
                 {p.tags && (
                   <div className="flex flex-wrap gap-2 mt-2">
                     {p.tags.map((tag: string, i: number) => (
@@ -68,8 +62,8 @@ export default function Projects() {
                     disabled={!hasPrevious}
                     className={`px-4 py-2 rounded-md ${
                         hasPrevious 
-                            ? 'bg-blue-500 text-white hover:bg-blue-600' 
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            ? 'bg-[#070217] text-white hover:bg-blue-950' 
+                            : 'bg-gray-100 text-gray-200 cursor-not-allowed'
                     }`}
                 >
                     Previous
@@ -82,8 +76,8 @@ export default function Projects() {
                     disabled={!hasNext}
                     className={`px-4 py-2 rounded-md ${
                         hasNext 
-                            ? 'bg-blue-500 text-white hover:bg-blue-600' 
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            ? 'bg-[#070217] text-white hover:bg-blue-950' 
+                            : 'bg-gray-100 text-gray-200 cursor-not-allowed'
                     }`}
                 >
                     Next

@@ -17,68 +17,6 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
-  {
-    title: 'ACM Near Expiry IaC',
-    description: 'Building infrastructure as code for ACM resources nearing expiry.',
-    link: 'https://github.com/DBCD20/terrafom-aws-acm-expiry-notification',
-    tags: ['Terraform', 'AWS', 'IaC'],
-    date: '2025-07-24',
-    sections: [
-      {
-        type: 'overview',
-        title: 'Overview',
-        content: 'This project provides a notification system for expiring AWS Certificate Manager (ACM) certificates. It is crucial for maintaining the security and reliability of web applications and services that rely on TLS/SSL certificates.'
-      },
-      {
-        type: 'warning',
-        content: '⚠️ Note: This system is not yet fully tested, but it may still provide valuable guidance or serve as a starting point for implementing your own ACM expiry alerting solution.'
-      },
-      {
-        type: 'list',
-        title: '⚠️ Why ACM Expiry Notifications Matter',
-        content: 'TLS/SSL certificates are essential for:',
-        items: [
-          'Securing communications between clients and servers',
-          'Establishing trust through domain validation',
-          'Avoiding browser warnings and failed connections'
-        ]
-      },
-      {
-        type: 'list',
-        title: 'When a certificate expires',
-        content: 'If a certificate expires without renewal:',
-        items: [
-          'Your service may become inaccessible',
-          'Users will see security warnings or connection errors',
-          'This can lead to loss of trust, downtime, and revenue impact'
-        ]
-      },
-      {
-        type: 'list',
-        title: 'Auto-renewal Isnt Always Enough',
-        content: 'While ACM supports automatic renewal for some certificates (like those in use by Elastic Load Balancers or CloudFront), not all certificates are automatically renewed. Even when auto-renewal is enabled:',
-        items: [
-          'Certificates may fail to renew due to DNS issues or validation problems',
-          'Human oversight is often needed to confirm successful renewal',
-          'Notification gives you time to investigate and fix issues before service is impacted'
-        ]
-      },
-      {
-        type: 'code',
-        title: '🛠️ Setup',
-        content: `module "acm_expiry_notification" {
-    source             = "git::https://github.com/DBCD20/module-acm-expiry-notification.git"
-    notification_email = myemail@gmail.com
-}`,
-        language: 'hcl'
-      },
-      {
-        type: 'text',
-        title: '🚧 Status',
-        content: 'This project is a work in progress. Although not fully tested, it may still offer useful ideas or a framework for building your own solution.'
-      }
-    ]
-  },
 {
   title: 'Terraform Module: VPC',
   description: 'Building infrastructure as code for VPC resources.',
@@ -120,16 +58,15 @@ export const projectsData: Project[] = [
       type: 'code',
       title: 'Usage',
       content: `module "vpc_networking" {
-  source  = "github.com/your-org/terraform-vpc-networking-module"
+  source  = "https://github.com/DBCD20/aws-modules//terraform-aws-vpc"
 
-  cidr_block             = "10.0.0.0/16"
-  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
-  private_subnets = ["10.0.101.0/24", "10.0.102.0/24"]
-  project_name    = "main"
+  cidr_block           = "10.0.0.0/16"
+  public_subnets       = ["10.0.1.0/24", "10.0.2.0/24"]
+  private_subnets      = ["10.0.101.0/24", "10.0.102.0/24"]
+  project_name         = "main"
   enable_nat_gateway   = true
   environment          = "dev"
   region               = "us-east-1"
-  availability_zones   = ["us-east-1a", "us-east-1b"]
 }`,
       language: 'hcl'
     },
@@ -141,11 +78,137 @@ export const projectsData: Project[] = [
   ]
 },
 {
+  title: "Terraform Module: VPC Flow Logs (S3)",
+  description:
+    "A Terraform module that enables VPC Flow Logs for a specified VPC and delivers them to an S3 bucket. It supports configurable traffic types and custom log formats, while remaining simple and reusable.",
+  link: "/projects/vpc-flow-logs-s3",
+  githubUrl: "https://github.com/DBCD20/aws-modules/tree/main/terraform-aws-vpc-flow-logs",
+  tags: ["terraform", "aws", "vpc", "s3", "flow-logs"],
+  date: "2025-08-22",
+  sections: [
+        {
+      type: "overview",
+      title: "Overview",
+      content:
+        "This Terraform module provisions VPC Flow Logs for a specified VPC and sends the logs to an S3 bucket. It allows you to monitor network traffic, troubleshoot connectivity issues, and enhance security by capturing detailed flow log data.",
+    },
+    {
+      type: "list",
+      title: "Features",
+      content: "",
+      items: [
+        "Creates a VPC Flow Log resource",
+        "Sends flow logs to an S3 bucket",
+        "Configurable traffic type (ALL, ACCEPT, REJECT)",
+        "Customizable log format",
+        "Clean and reusable module structure"
+      ]
+    },
+    {
+      type: "code",
+      title: "Usage Example",
+      content: `# Example VPC
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
+
+# Example S3 bucket for flow logs
+resource "aws_s3_bucket" "vpc_flow_logs" {
+  bucket = "my-vpc-flow-logs-bucket"
+}
+
+# Attach flow logs to the VPC
+module "vpc_flow_logs" {
+  source = "git::github.com/DBCD20/aws-modules//terraform-aws-vpc-flow-logs"
+
+  vpc_id        = aws_vpc.main.id
+  s3_bucket_arn = aws_s3_bucket.vpc_flow_logs.arn
+  traffic_type  = "ALL"
+}`,
+      language: "hcl"
+    },
+    {
+      type: "warning",
+      title: "Notes",
+      content:
+        "This module assumes you already have an S3 bucket created and its ARN is passed in. Ensure your S3 bucket policy and KMS key policy (if SSE-KMS is used) allow delivery from the VPC Flow Logs service."
+    },
+    {
+      type: "text",
+      title: "Author",
+      content:
+        "This module was created with the help of AI-assisted development 🧩."
+    }
+  ],
+},
+{
+  title: 'ACM Near Expiry IaC',
+  description: 'Building infrastructure as code for ACM resources nearing expiry.',
+  link: 'https://github.com/DBCD20/terrraform-aws-solutions/tree/master/terraform-aws-acm-approaching-expiry',
+  tags: ['Terraform', 'AWS', 'IaC'],
+  date: '2025-07-24',
+  sections: [
+    {
+      type: 'overview',
+      title: 'Overview',
+      content: 'This project provides a notification system for expiring AWS Certificate Manager (ACM) certificates. It is crucial for maintaining the security and reliability of web applications and services that rely on TLS/SSL certificates.'
+    },
+    {
+      type: 'warning',
+      content: '⚠️ Note: This system is not yet fully tested, but it may still provide valuable guidance or serve as a starting point for implementing your own ACM expiry alerting solution.'
+    },
+    {
+      type: 'list',
+      title: '⚠️ Why ACM Expiry Notifications Matter',
+      content: 'TLS/SSL certificates are essential for:',
+      items: [
+        'Securing communications between clients and servers',
+        'Establishing trust through domain validation',
+        'Avoiding browser warnings and failed connections'
+      ]
+    },
+    {
+      type: 'list',
+      title: 'When a certificate expires',
+      content: 'If a certificate expires without renewal:',
+      items: [
+        'Your service may become inaccessible',
+        'Users will see security warnings or connection errors',
+        'This can lead to loss of trust, downtime, and revenue impact'
+      ]
+    },
+    {
+      type: 'list',
+      title: 'Auto-renewal Isnt Always Enough',
+      content: 'While ACM supports automatic renewal for some certificates (like those in use by Elastic Load Balancers or CloudFront), not all certificates are automatically renewed. Even when auto-renewal is enabled:',
+      items: [
+        'Certificates may fail to renew due to DNS issues or validation problems',
+        'Human oversight is often needed to confirm successful renewal',
+        'Notification gives you time to investigate and fix issues before service is impacted'
+      ]
+    },
+    {
+      type: 'code',
+      title: '🛠️ Setup',
+      content: `module "acm_expiry_notification" {
+  source             = "git::https://github.com/DBCD20/terraform-aws-solutions//module-acm-expiry-notification.git"
+  notification_email = myemail@gmail.com
+}`,
+      language: 'hcl'
+    },
+    {
+      type: 'text',
+      title: '🚧 Status',
+      content: 'This project is a work in progress. Although not fully tested, it may still offer useful ideas or a framework for building your own solution.'
+    }
+  ]
+},
+{
   title: "Delete IaC Identity Infrastructure",
   description:
     "This Terraform module is used to safely delete identity resources such as IAM users, roles, and policies that were previously created using Infrastructure as Code (IaC). It's designed for secure, auditable, and controlled cleanup of cloud identity resources.",
-  link: "https://github.com/your-org/tf-delete-iac-identity",
-  githubUrl: "https://github.com/your-org/tf-delete-iac-identity",
+  link: "https://github.com/DBCD20/terrraform-aws-solutions/terraform-aws-delete-iac-identity",
+  githubUrl: "https://github.com/DBCD20/terrraform-aws-solutions/terraform-aws-delete-iac-identity",
   tags: ["Terraform", "IAM", "Infrastructure as Code", "Cloud", "Security"],
   date: "2025-08-18",
   sections: [
@@ -162,8 +225,8 @@ export const projectsData: Project[] = [
         {
       type: 'code',
       title: 'Usage',
-      content: `git clone https://github.com/your-org/tf-delete-iac-identity.git
-cd tf-delete-iac-identity`,
+      content: `git clone https://github.com/DBCD20/terrraform-aws-solutions.git
+cd terraform-aws-delete-iac-identity`,
       language: 'hcl'
     },
     {
@@ -185,58 +248,120 @@ cd tf-delete-iac-identity`,
     },
   ],
 },
+{
+  title: "CloudTrail Monitor & Auto-Remediation",
+  description:
+    "A Terraform module that monitors AWS CloudTrail, sends notifications when it is disabled, and automatically remediates by re-enabling CloudTrail logging.",
+  link: "https://github.com/DBCD20/terrraform-aws-solutions/tree/master/terraform-aws-detect-disabled-cloudtrail",
+  githubUrl: "https://github.com/DBCD20/terrraform-aws-solutions/tree/master/terraform-aws-detect-disabled-cloudtrail",
+  tags: ["terraform", "aws", "cloudtrail", "security", "remediation"],
+  date: "2025-08-20",
+  sections: [
     {
-        title: 'Terraform Module: VPC Flow Logs',
-        description: 'Building infrastructure as code for VPC Flow Logs.',
-        link: '#',
-        tags: ['Terraform', 'AWS', 'VPC'],
-        date: 'YYYY-MM-DD',
-        sections: [
-      {
-        type: 'overview',
-        title: 'Still work in progress 🚧',
-        content: 'This module is designed to create and manage VPC Flow Logs in AWS. It allows you to capture information about the IP traffic going to and from network interfaces in your VPC.',
-      }]
+      type: "overview",
+      title: "Overview",
+      content:
+        "This Terraform module provides automated monitoring and remediation for AWS CloudTrail. It ensures CloudTrail remains enabled across your account by detecting when it is disabled, sending notifications, and automatically remediating the issue."
     },
     {
-        title: 'Detect Disabled CloudTrail IaC',
-        description: 'Building infrastructure as code for detecting disabled CloudTrail.',
-        link: '#',
-        tags: ['Terraform', 'AWS', 'CloudTrail'],
-        date: 'YYYY-MM-DD',
-        sections: [
-      {
-        type: 'overview',
-        title: 'Still work in progress 🚧',
-        content: 'This module is designed to detect if CloudTrail is disabled in your AWS account. It helps ensure that your account activity is being logged and monitored.',
-      }]
+      type: "list",
+      title: "Key Capabilities",
+      content: "",
+      items: [
+        "Detects when CloudTrail is disabled",
+        "Sends notifications through an Amazon SNS topic",
+        "Automatically remediates by invoking a Lambda function",
+        "Helps maintain compliance, visibility, and auditability"
+      ]
     },
     {
-        title: 'Network Firewall IaC',
-        description: 'Building infrastructure as code for network firewalls.',
-        link: '#',
-        tags: ['Terraform', 'AWS', 'Network Firewall', 'Security'],
-        date: 'YYYY-MM-DD',
-        sections: [
-      {
-        type: 'overview',
-        title: 'Still work in progress 🚧',
-        content: 'This module is designed to create and manage network firewalls in AWS. It allows you to define rules and policies to control traffic flow within your VPC.',
-      }]
+      type: "list",
+      title: "Architecture",
+      content: "",
+      items: [
+        "Amazon CloudWatch Event / EventBridge Rule - Detects CloudTrail `StopLogging` or `DeleteTrail` events",
+        "Amazon SNS Topic - Sends alerts to subscribed email addresses or other subscribers",
+        "AWS Lambda Function (Remediation) - Invoked when CloudTrail is disabled and re-enables logging automatically",
+        "IAM Roles & Policies - Grants least-privilege permissions for Lambda and EventBridge"
+      ]
     },
     {
-        title: 'Terraform Module: EKS',
-        description: 'Building infrastructure as code for EKS resources.',
-        link: '#',
-        tags: ['Terraform', 'AWS', 'EKS', 'Kubernetes'],
-        date: 'YYYY-MM-DD',
-        sections: [
-      {
-        type: 'overview',
-        title: 'Still work in progress 🚧',
-        content: 'This module is designed to create and manage EKS (Elastic Kubernetes Service) clusters in AWS. It allows you to deploy, manage, and scale containerized applications using Kubernetes.',
-      }]
+      type: "list",
+      title: "Features",
+      content: "",
+      items: [
+        "Continuous monitoring of CloudTrail status",
+        "Automated alerting via SNS",
+        "Self-healing by re-enabling CloudTrail",
+        "Configurable CloudTrail name and region",
+        "Extensible design with custom subscribers or actions"
+      ]
     },
+    {
+      type: "code",
+      title: "Usage",
+      content: `module "cloudtrail_guard" {
+  source  = "git::github.com/DBCD20/terrraform-aws-solutions//terraform-aws-detect-disabled-cloudtrail"
+  
+  sns_alert_email       = "security-team@example.com"
+}`,
+      language: "hcl"
+    },
+    {
+      type: "list",
+      title: "Example Event Flow",
+      content: "",
+      items: [
+        "A malicious or accidental action disables CloudTrail",
+        "EventBridge Rule detects the action",
+        "An SNS Notification is sent to subscribers",
+        "The Lambda Remediation Function executes and re-enables CloudTrail logging"
+      ]
+    },
+    {
+      type: "text",
+      title: "Security Considerations",
+      content:
+        "Lambda is granted only the minimum IAM permissions required to DescribeTrails and StartLogging. All remediation actions are logged to CloudWatch Logs. Ensure SNS topics are restricted to trusted subscribers."
+    },
+    {
+      type: "text",
+      title: "License",
+      content: "MIT License."
+    },
+    {
+      type: "warning",
+      content:
+        "📌 Note: This README and the Terraform configurations for this module were created with the assistance of AI."
+    }
+  ],
+},
+{
+    title: 'Network Firewall IaC',
+    description: 'Building infrastructure as code for network firewalls.',
+    link: '#',
+    tags: ['Terraform', 'AWS', 'Network Firewall', 'Security'],
+    date: 'YYYY-MM-DD',
+    sections: [
+  {
+    type: 'overview',
+    title: 'Still work in progress 🚧',
+    content: 'This module is designed to create and manage network firewalls in AWS. It allows you to define rules and policies to control traffic flow within your VPC.',
+  }]
+},
+{
+    title: 'Terraform Module: EKS',
+    description: 'Building infrastructure as code for EKS resources.',
+    link: '#',
+    tags: ['Terraform', 'AWS', 'EKS', 'Kubernetes'],
+    date: 'YYYY-MM-DD',
+    sections: [
+  {
+    type: 'overview',
+    title: 'Still work in progress 🚧',
+    content: 'This module is designed to create and manage EKS (Elastic Kubernetes Service) clusters in AWS. It allows you to deploy, manage, and scale containerized applications using Kubernetes.',
+  }]
+},
     {
         title: 'Terraform Module: ECS',
         description: 'Building infrastructure as code for ECS resources.',
