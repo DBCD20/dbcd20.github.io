@@ -207,8 +207,8 @@ module "vpc_flow_logs" {
   title: "Delete IaC Identity Infrastructure",
   description:
     "This Terraform module is used to safely delete identity resources such as IAM users, roles, and policies that were previously created using Infrastructure as Code (IaC). It's designed for secure, auditable, and controlled cleanup of cloud identity resources.",
-  link: "https://github.com/DBCD20/terrraform-aws-solutions/terraform-aws-delete-iac-identity",
-  githubUrl: "https://github.com/DBCD20/terrraform-aws-solutions/terraform-aws-delete-iac-identity",
+  link: "https://github.com/DBCD20/terrraform-aws-solutions/tree/master/terraform-aws-remove-inactive-identity",
+  githubUrl: "https://github.com/DBCD20/terrraform-aws-solutions/tree/master/terraform-aws-remove-inactive-identity",
   tags: ["Terraform", "IAM", "Infrastructure as Code", "Cloud", "Security"],
   date: "2025-08-18",
   sections: [
