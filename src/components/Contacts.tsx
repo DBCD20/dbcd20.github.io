@@ -10,7 +10,7 @@ export default function Contact() {
         </p>
 
         <form
-          action="https://formspree.io/f/your-form-id"
+          action="https://formspree.io/f/mojpryjz"
           method="POST"
           className="space-y-6"
         >
@@ -30,10 +30,11 @@ export default function Contact() {
             <input
               type="email"
               id="email"
-              name="_replyto"
+              name="email"
               required
               className="bg-black/50 mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary p-2 text-white"
             />
+            <input type="text" name="_gotcha" style={{ display: "none" }} />
           </div>
 
           <div>
