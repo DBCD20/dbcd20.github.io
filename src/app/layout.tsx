@@ -12,6 +12,19 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "David's Website",
   description: "Personal portfolio website showcasing DevOps projects and skills.",
+  openGraph: {
+    title: "David's Website",
+    description: "Personal portfolio website showcasing DevOps projects and skills.",
+    url: "https://davidmagsipoc.dev",
+    siteName: "David's' Website",
+    images: [
+      {
+        url: "/website-logo.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -25,4 +38,3 @@ export default function RootLayout({
     </html>
   )
 }
-
